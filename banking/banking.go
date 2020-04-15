@@ -45,3 +45,7 @@ func (a *Account) ChangeOwner(newOwner string) {
 func (a Account) Onwer() string {
 	return a.owner
 }
+
+func (a Account) String() string {
+	return fmt.Sprint(a.Onwer(), "'s account/ Has ", a.Balance())
+}
