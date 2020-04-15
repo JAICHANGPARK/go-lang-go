@@ -16,7 +16,8 @@ func (d Dictionary) Search(word string) (string, error) {
 	return "", errNotFound
 }
 
-func (d Dictionary) Add(word, def string) err {
+// Add a word
+func (d Dictionary) Add(word, def string) error {
 	_, err := d.Search(word)
 	if err == errNotFound {
 		d[word] = def

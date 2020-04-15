@@ -27,4 +27,8 @@ func main() {
 	} else {
 		fmt.Println(definition)
 	}
+	errs := dictionary.Add("hello", "World")
+	if errs != nil {
+		fmt.Println(errs)
+	}
 }
