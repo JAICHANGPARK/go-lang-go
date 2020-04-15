@@ -23,6 +23,7 @@ func (a Account) Balance() int {
 	return a.balance
 }
 
+//Withdraw
 func (a Account) Withdraw(amount int) {
 	a.balance -= amount
 }
