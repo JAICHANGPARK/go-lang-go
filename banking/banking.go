@@ -1,6 +1,9 @@
 package banking
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 // Account struct
 type Account struct {
@@ -24,6 +27,10 @@ func (a Account) Balance() int {
 }
 
 //Withdraw
-func (a Account) Withdraw(amount int) {
+func (a *Account) Withdraw(amount int) error {
+	if a.balance < amount {
+		return errors.New("Can't Withdraw you are poor")
+	}
 	a.balance -= amount
+	return nil
 }
