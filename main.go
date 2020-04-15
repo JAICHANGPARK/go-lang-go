@@ -16,5 +16,5 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(acc.Balance())
+	fmt.Println(acc.Balance(), acc.Onwer())
 }

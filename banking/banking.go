@@ -7,14 +7,14 @@ import (
 
 // Account struct
 type Account struct {
-	Owner   string
+	owner   string
 	balance int
 }
 
 var errNoMoney = errors.New("Can't withdraw")
 
 func NewAccount(owner string) *Account {
-	account := Account{Owner: owner, balance: 0}
+	account := Account{owner: owner, balance: 0}
 	return &account
 }
 
@@ -35,4 +35,13 @@ func (a *Account) Withdraw(amount int) error {
 	}
 	a.balance -= amount
 	return nil
+}
+
+//Change Onwer of the account
+func (a *Account) ChangeOwner(newOwner string) {
+	a.owner = newOwner
+}
+
+func (a Account) Onwer() string {
+	return a.owner
 }
