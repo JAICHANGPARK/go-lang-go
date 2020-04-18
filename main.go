@@ -21,17 +21,14 @@ func main() {
 	}
 	for _, url := range urls {
 		fmt.Println(url)
+		hitURL(url)
 	}
 }
 
 func hitURL(url string) error {
-
 	resp, err := http.Get(url)
-	if err != nil {
-
-	}
-	if resp.StatusCode >= 400 {
+	if err == nil || resp.StatusCode >= 400 {
 		return errRequestFailed
 	}
-
+	return nil
 }
